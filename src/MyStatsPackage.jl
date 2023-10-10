@@ -7,6 +7,6 @@ include("git_exercise.jl")
 export printOwner
 
 include("git_exercise_contrib.jl")
-export printContributor
+export printContributor, printContributor2
 
 end # module MyStatsPackage
