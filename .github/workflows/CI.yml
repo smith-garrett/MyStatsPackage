@@ -5,12 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: julia-actions/julia-setup@v1
+      - uses: julia-actions/setup-julia@v1
         with:
           version: '1.9'
       - run: |
           julia -e 'using Pkg; Pkg.add(PackageSpec(name="JuliaFormatter"))'
-          julia  -e 'using JuliaFormatter; format(".", verbose=true)'
+          julia -e 'using JuliaFormatter; format(".", verbose=true)'
           julia -e '
           out = Cmd(`git diff`) |> read |> String
           if out == ""
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: julia-actions/julia-setup@v1
+      - uses: julia-actions/setup-julia@v1
         with:
           version: '1.9'
       - uses: julia-actions/julia-buildpkg@v1
