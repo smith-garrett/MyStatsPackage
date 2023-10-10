@@ -2,7 +2,7 @@ using ProgressMeter
 
 function rse_sum(x)
     sm = zero(eltype(x))
-    @showprogress dt=0.1 for i in eachindex(x)
+    @showprogress dt = 0.1 for i in eachindex(x)
         sm += x[i]
     end
     return sm
@@ -19,13 +19,13 @@ rse_mean(-15:17) == 1
 
 function rse_std(x)
     ln = length(x)
-    return sqrt(sum((x .- rse_mean(x)).^2) / (ln-1))
+    return sqrt(sum((x .- rse_mean(x)) .^ 2) / (ln - 1))
 end
 
 rse_std(1:3) == 1
 
 #function rse_tstat(x; σ=nothing)
-function rse_tstat(x; σ=rse_std(x))
+function rse_tstat(x; σ = rse_std(x))
     mn = rse_mean(x)
     #=
     if σ == nothing
