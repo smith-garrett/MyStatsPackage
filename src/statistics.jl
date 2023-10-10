@@ -43,10 +43,10 @@ rse_tstat(rand(10_000))
 # Task 2:
 
 struct StatResult
-    x
-    n
-    std
-    tvalue
+    x::Vector
+    n::Int64
+    std::Int64
+    tvalue::Float64
 end
 
 StatResult(data) = StatResult(collect(data), length(data), rse_std(data), rse_tstat(data))
