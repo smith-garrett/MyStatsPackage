@@ -45,7 +45,7 @@ rse_tstat(rand(10_000))
 struct StatResult
     x::Vector
     n::Int64
-    std::Int64
+    std::Float64
     tvalue::Float64
 end
 
