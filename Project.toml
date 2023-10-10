@@ -1,0 +1,7 @@
+name = "MyStatsPackage"
+uuid = "6c41f63d-507b-4dcb-b8a6-9e96728a9382"
+authors = ["Garrett Smith <gasmith@uni-potsdam.de>"]
+version = "0.1.0"
+
+[deps]
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
